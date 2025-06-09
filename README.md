@@ -173,4 +173,15 @@ Use when it's very important for positive predictions to be accurate.
 Example : Killer Robot?
 
 
+Receiver-operating characteristic curve (ROC)
+
+The ROC curve is a visual representation of model performance across all thresholds.
+
+Area under the curve (AUC)
+
+The area under the ROC curve (AUC) represents the probability that the model, if given a randomly chosen positive and negative example, will rank the positive higher than the negative.
+
+![image](https://github.com/user-attachments/assets/c7cc9aba-61f5-4ff2-8486-40fa7f0961f5)
+
+
 
