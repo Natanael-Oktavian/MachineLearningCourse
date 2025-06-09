@@ -58,3 +58,14 @@ Features are the values that a supervised model uses to predict the label. The l
 Model
 
 In supervised learning, a model is the complex collection of numbers that define the mathematical relationship from specific input feature patterns to specific output label values. The model discovers these patterns through training.
+
+Training
+
+A model needs to be trained to learn the mathematical relationship between the features and the label in a dataset.
+
+
+Linear regression
+
+Linear regression is a statistical technique used to find the relationship between variables. In an ML context, linear regression finds the relationship between features and a label.
+![image](https://github.com/user-attachments/assets/6495a967-a718-4ff1-8c78-4d59b5176b87)
+
