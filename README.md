@@ -11,6 +11,7 @@ Types of ML Systems
 - Generative AI
 
 Supervised learning 
+
 Supervised learning models can make predictions after seeing lots of data with the correct answers and then discovering the connections between the elements in the data that produce the correct answers
 Two of the most common use cases for supervised learning are regression and classification.
 Regression model predict numeric value. 
