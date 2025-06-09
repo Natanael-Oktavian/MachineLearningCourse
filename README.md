@@ -143,13 +143,13 @@ Classification
 Confusion matrix : True positive (TP), True negative (TN), False positive (FP), False negative (FN)
 Classification metrics :
 
-Accuracy 
+**Accuracy**
 
 ![image](https://github.com/user-attachments/assets/ad46a55b-51af-472e-8fa2-09445edb2623)
 
 Use as a rough indicator of model training progress/convergence for balanced datasets.
 
-Recall / True positive rate (TPR) 
+**Recall / True positive rate (TPR)**
 
 ![image](https://github.com/user-attachments/assets/89480aed-b522-49e6-8a0d-5f09265a4f81)
 
@@ -157,7 +157,7 @@ Decrease the threshold resulted in higher TPR
 Use when false negatives are more expensive than false positives.
 Example : Diseases detection
 
-False positive rate (FPR)
+**False positive rate (FPR)**
 
 ![image](https://github.com/user-attachments/assets/60f20a52-5fad-49a5-ac33-29a617b5c456)
 
@@ -165,7 +165,7 @@ Increase the threshold resulted in better FPR
 Use when false positives are more expensive than false negatives.
 Example : Spam detector
 
-Precision
+**Precision**
 
 ![image](https://github.com/user-attachments/assets/41c25444-c44b-4d02-9d3d-8dbcae2b3fd5)
 
