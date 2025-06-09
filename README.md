@@ -69,3 +69,14 @@ Linear regression
 Linear regression is a statistical technique used to find the relationship between variables. In an ML context, linear regression finds the relationship between features and a label.
 ![image](https://github.com/user-attachments/assets/6495a967-a718-4ff1-8c78-4d59b5176b87)
 
+
+y' : is the predicted label—the output.
+b : is the bias of the model. Bias is the same concept as the y-intercept
+w : is the weight of the feature. Weight is the same concept as the slope in the algebraic equation for a line. Weight is a parameter of the model and is calculated during training.
+x : is a feature—the input.
+
+
+Loss is a numerical metric that describes how wrong a model's predictions are. Loss measures the distance between the model's predictions and the actual labels.
+Types of loss
+![image](https://github.com/user-attachments/assets/1b015114-c02f-46a7-a827-b3aa7d258c56)
+
