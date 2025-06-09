@@ -110,3 +110,16 @@ number of data points, the batch size can be any number greater than 1 and less 
 Epochs
 
 During training, an epoch means that the model has processed every example in the training set once. For example, given a training set with 1,000 examples and a mini-batch size of 100 examples, it will take the model 10 iterations to complete one epoch.
+
+
+Logistic Regression
+
+Calculating a probability
+Sigmoid function
+![image](https://github.com/user-attachments/assets/5d234b8c-2234-4a8b-9c9c-fe703302bfe1)
+
+![image](https://github.com/user-attachments/assets/88bdcd53-6848-4516-9509-27c0477b7748)
+![image](https://github.com/user-attachments/assets/727dc9b5-465f-4655-9dcc-410d8d25ea00)
+
+
+
