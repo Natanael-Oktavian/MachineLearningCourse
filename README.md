@@ -80,3 +80,33 @@ Loss is a numerical metric that describes how wrong a model's predictions are. L
 Types of loss
 ![image](https://github.com/user-attachments/assets/1b015114-c02f-46a7-a827-b3aa7d258c56)
 
+MSE. The model is closer to the outliers but further away from most of the other data points.
+MAE. The model is further away from the outliers but closer to most of the other data points.
+
+Gradient descent
+
+Gradient descent is a mathematical technique that iteratively finds the weights and bias that produce the model with the lowest loss.
+When training a model, you'll often look at a loss curve to determine if the model has converged.
+The loss functions for linear models always produce a convex surface (letter U). As a result of this property, when a linear regression model converges, we know the model has found the weights and bias that produce the lowest loss.
+
+
+Hyperparameters are variables that control different aspects of training. Three common hyperparameters are:
+
+Learning rate
+Batch size
+Epochs
+
+Learning rate
+
+Learning rate is a floating point number you set that influences how quickly the model converges. If the learning rate is too low, the model can take a long time to converge. However, if the learning rate is too high, the model never converges, but instead bounces around the weights and bias that minimize the loss. The goal is to pick a learning rate that's not too high nor too low so that the model converges quickly.
+
+Batch size
+
+Batch size is a hyperparameter that refers to the number of examples the model processes before updating its weights and bias.
+Stochastic gradient descent (SGD): Stochastic gradient descent uses only a single example (a batch size of one) per iteration. 
+Mini-batch stochastic gradient descent (mini-batch SGD): Mini-batch stochastic gradient descent is a compromise between full-batch and SGD. For N 
+number of data points, the batch size can be any number greater than 1 and less than N
+
+Epochs
+
+During training, an epoch means that the model has processed every example in the training set once. For example, given a training set with 1,000 examples and a mini-batch size of 100 examples, it will take the model 10 iterations to complete one epoch.
