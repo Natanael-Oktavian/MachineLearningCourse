@@ -185,3 +185,6 @@ The area under the ROC curve (AUC) represents the probability that the model, if
 
 
 
+**CODING EXERCISE**
+
+https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/binary_classification_rice.ipynb?utm_source=mlcc&utm_campaign=colab-external&utm_medium=referral&utm_content=binary_classification
