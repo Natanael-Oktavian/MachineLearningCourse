@@ -202,3 +202,74 @@ Feature Engineering :
 Normalization
 
 The goal of normalization is to transform features to be on a similar scale
+
+normalization methods:
+
+**LinearScaling**
+
+![image](https://github.com/user-attachments/assets/c7453ac2-e1df-4653-8eb5-9133d940fb03)
+
+Linear scaling is a good choice when all of the following conditions are met:
+
+The lower and upper bounds of your data don't change much over time.
+The feature contains few or no outliers, and those outliers aren't extreme.
+The feature is approximately uniformly distributed across its range. That is, a histogram would show roughly even bars for most values.
+Suppose human age is a feature. Linear scaling is a good normalization technique for age because:
+
+The approximate lower and upper bounds are 0 to 100.
+age contains a relatively small percentage of outliers. Only about 0.3% of the population is over 100.
+Although certain ages are somewhat better represented than others, a large dataset should contain sufficient examples of all ages.
+
+**Z-score scaling**
+
+A Z-score is the number of standard deviations a value is from the mean.
+![image](https://github.com/user-attachments/assets/126b1703-6f72-40ab-8fde-5a9fa5817f18)
+
+Z-score is a good choice when the data follows a normal distribution or a distribution somewhat like a normal distribution.
+
+
+**LogScaling**
+
+![image](https://github.com/user-attachments/assets/40f41dc6-71e9-436f-b068-f813c1b90360)
+
+Log scaling is helpful when the data conforms to a power law distribution. Casually speaking, a power law distribution looks as follows:
+
+Low values of X have very high values of Y.
+As the values of X increase, the values of Y quickly decrease. Consequently, high values of X have very low values of Y.
+
+**Clipping**
+
+Clipping is a technique to minimize the influence of extreme outliers. In brief, clipping usually caps (reduces) the value of outliers to a specific maximum value. 
+
+![image](https://github.com/user-attachments/assets/c132c06e-557e-474a-8ccb-9348451400e0)
+
+**Binning**
+
+![image](https://github.com/user-attachments/assets/d9ee369e-4cbf-4d73-8fff-e394aff6b267)
+
+Binning is a good alternative to scaling or clipping when either of the following conditions is met:
+
+The overall linear relationship between the feature and the label is weak or nonexistent.
+When the feature values are clustered.
+
+**Scrubbing**
+
+![image](https://github.com/user-attachments/assets/0d9e8984-369a-4ba3-ba20-355ac78ffa1f)
+
+Once detected, you typically "fix" examples that contain bad features or bad labels by removing them from the dataset or imputing their values.
+
+
+Best practices for working with numerical data:
+
+Remember that your ML model interacts with the data in the feature vector, not the data in the dataset.
+Normalize most numerical features.
+If your first normalization strategy doesn't succeed, consider a different way to normalize your data.
+Binning, also referred to as bucketing, is sometimes better than normalizing.
+Considering what your data should look like, write verification tests to validate those expectations. For example:
+The absolute value of latitude should never exceed 90. You can write a test to check if a latitude value greater than 90 appears in your data.
+If your data is restricted to the state of Florida, you can write tests to check that the latitudes fall between 24 through 31, inclusive.
+Visualize your data with scatter plots and histograms. Look for anomalies.
+Gather statistics not only on the entire dataset but also on smaller subsets of the dataset. That's because aggregate statistics sometimes obscure problems in smaller sections of a dataset.
+Document all your data transformations.
+
+
