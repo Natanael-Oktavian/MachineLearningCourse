@@ -280,3 +280,6 @@ Gather statistics not only on the entire dataset but also on smaller subsets of 
 Document all your data transformations.
 
 
+**Categorical Data**
+
+Encoding means converting categorical or other data to numerical vectors that a model can train on. 
