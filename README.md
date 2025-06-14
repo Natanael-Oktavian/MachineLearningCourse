@@ -283,3 +283,15 @@ Document all your data transformations.
 **Categorical Data**
 
 Encoding means converting categorical or other data to numerical vectors that a model can train on. 
+
+![image](https://github.com/user-attachments/assets/9a28a46e-3274-42a8-b94c-1be599158193)
+
+![image](https://github.com/user-attachments/assets/4555f656-e8b6-4656-b3dd-83abfdbc943c)
+
+![image](https://github.com/user-attachments/assets/a33de071-6346-4390-927b-bb3f6010b08c)
+
+![image](https://github.com/user-attachments/assets/957a8dea-ed79-46b2-8ea8-eaab17fb23eb)
+
+
+
+
