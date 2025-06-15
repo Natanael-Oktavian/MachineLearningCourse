@@ -294,4 +294,82 @@ Encoding means converting categorical or other data to numerical vectors that a 
 
 
 
+**Label**
+Direct versus proxy labels
+Consider two different kinds of labels:
+
+Direct labels, which are labels identical to the prediction your model is trying to make. That is, the prediction your model is trying to make is exactly present as a column in your dataset. For example, a column named bicycle owner would be a direct label for a binary classification model that predicts whether or not a person owns a bicycle.
+Proxy labels, which are labels that are similar—but not identical—to the prediction your model is trying to make. For example, a person subscribing to Bicycle Bizarre magazine probably—but not definitely—owns a bicycle.
+
+**Imbalanced datasets**
+
+
+One way to handle an imbalanced dataset is to downsample and upweight the majority class. Here are the definitions of those two new terms:
+
+Downsampling (in this context) means training on a disproportionately low subset of the majority class examples.
+Upweighting means adding an example weight to the downsampled class equal to the factor by which you downsampled.
+
+Step 1: Downsample the majority class. Consider the virus dataset shown in Figure 5 that has a ratio of 1 positive label for every 200 negative labels. Downsampling by a factor of 10 improves the balance to 1 positive to 20 negatives (5%). Although the resulting training set is still moderately imbalanced, the proportion of positives to negatives is much better than the original extremely imbalanced proportion (0.5%).
+
+Step 2: Upweight the downsampled class: Add example weights to the downsampled class. After downsampling by a factor of 10, the example weight should be 10. (Yes, this might seem counterintuitive, but we'll explain why later on.)
+
+You might also be wondering whether upweighting cancels out downsampling. Yes, to some degree. However, the combination of upweighting and downsampling enables mini-batches to contain enough minority classes to train an effective model.
+
+Upweighting the minority class by itself is usually easier to implement than downsampling and upweighting the majority class. However, upweighting the minority class tends to increase prediction bias.
+
+Downsampling the majority class brings the following benefits:
+
+Faster convergence: During training, the model sees the minority class more often, which helps the model converge faster.
+Less disk space: By consolidating the majority class into fewer examples with larger weights, the model uses less disk space storing those weights. This savings allows more disk space for the minority class, so the model can collect a greater number and a wider range of examples from that class.
+Unfortunately, you must usually downsample the majority class manually, which can be time consuming during training experiments, particularly for very large datasets.
+
+Rebalance ratios
+How much should you downsample and upweight to rebalance your dataset? To determine the answer, you should experiment with the rebalancing ratio, just as you would experiment with other hyperparameters. That said, the answer ultimately depends on the following factors:
+
+The batch size
+The imbalance ratio
+The number of examples in the training set
+Ideally, each batch should contain multiple minority class examples. Batches that don't contain sufficient minority classes will train very poorly. The batch size should be several times greater than the imbalance ratio. For example, if the imbalance ratio is 100:1, then the batch size should be at least 500.
+
+**Dividing the original dataset**
+Training, validation, and test sets
+
+**Overfitting**
+
+Overfitting means creating a model that matches (memorizes) the training set so closely that the model fails to make correct predictions on new data. An overfit model is analogous to an invention that performs well in the lab but is worthless in the real world.
+
+Generalization is the opposite of overfitting. That is, a model that generalizes well makes good predictions on new data. Your goal is to create a model that generalizes well to new data.
+
+Detecting overfitting
+The following curves help you detect overfitting:
+
+loss curves
+generalization curves
+A loss curve plots a model's loss against the number of training iterations. A graph that shows two or more loss curves is called a generalization curve. The following generalization curve shows two loss curves:
+
+![image](https://github.com/user-attachments/assets/7cf84803-b3a1-4313-b8c7-40440a203210)
+
+What causes overfitting?
+Very broadly speaking, overfitting is caused by one or both of the following problems:
+
+The training set doesn't adequately represent real life data (or the validation set or test set).
+The model is too complex.
+
+Generalization conditions
+
+A model trains on a training set, but the real test of a model's worth is how well it makes predictions on new examples, particularly on real-world data. While developing a model, your test set serves as a proxy for real-world data. Training a model that generalizes well implies the following dataset conditions:
+
+- Examples must be independently and identically distributed, which is a fancy way of saying that your examples can't influence each other.
+- The dataset is stationary, meaning the dataset doesn't change significantly over time.
+- The dataset partitions have the same distribution. That is, the examples in the training set are statistically similar to the examples in the validation set, test set, and real-world data.
+
+![image](https://github.com/user-attachments/assets/b3301da6-3a5e-412a-bfec-cfed82ddeb14)
+
+![image](https://github.com/user-attachments/assets/167d88e6-de99-4976-ac18-cbe8d7f5d2d0)
+
+![image](https://github.com/user-attachments/assets/4266efba-2e36-4388-a249-d750eae459c0)
+
+
+
+
 
